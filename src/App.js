@@ -65,6 +65,9 @@ class App extends Component{
 
     return(
 <div>
+
+
+
   <nav class="uk-navbar-container" uk-navbar>
       <div class="uk-navbar-left">
           <ul class="uk-navbar-nav">
@@ -83,7 +86,8 @@ class App extends Component{
         <p><i>We care...about your money.</i></p>
         </center>
         </div>
-        
+
+
         <div>
         <Switch>
           <Route path="/signin" render={(props)=> <SignIn {...props} />} />
