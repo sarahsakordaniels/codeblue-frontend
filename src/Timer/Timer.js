@@ -244,6 +244,7 @@ class Timer extends Component {
                 <button class="butn" onClick={this.showCodeMedForm}>Record Medication</button>
                 <button class="butn" onClick={this.showMetronome}>Metronome</button>
                 <button class="butn" onClick={this.showEndCode}>End Code</button>
+                
             </center>
 </div>
       <Confirmation patientId={this.state.patientId} shocks={this.props.shocks} patients={this.props.patients}

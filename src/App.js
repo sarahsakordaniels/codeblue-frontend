@@ -5,7 +5,7 @@ import SignIn from './SignIn/SignIn'
 import PatientList from './PatientList/PatientList'
 import CodeContainer from './CodeContainer/CodeContainer'
 import AddPatientForm from './AddPatientForm/AddPatientForm'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Link } from 'react-router-dom'
 
 
 
@@ -64,14 +64,27 @@ class App extends Component{
 
 
     return(
+<div>
+  <nav class="uk-navbar-container" uk-navbar>
+      <div class="uk-navbar-left">
+          <ul class="uk-navbar-nav">
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/patients">Patients</Link></li>
+              <li><Link to="/signin">Sign In</Link></li>
+              <li><Link to="/signup">Sign Up</Link></li>
+              <li><Link to="/code">Code</Link></li>
+          </ul>
+      </div>
+  </nav>
 
-      <div>
         <div class="title">
         <center>
         <h1>Corporate American Hospital</h1>
         <p><i>We care...about your money.</i></p>
         </center>
         </div>
+        
+        <div>
         <Switch>
           <Route path="/signin" render={(props)=> <SignIn {...props} />} />
           <Route path="/patients" render={(props)=> <PatientList patients={this.state.patients} />} />
@@ -80,6 +93,9 @@ class App extends Component{
           <Route path="/code" render={(props)=> <CodeContainer {...props} patients={this.state.patients} users={this.state.users}/>} />
         </Switch>
       </div>
+
+
+  </div>
 
     )
   }
