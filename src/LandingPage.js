@@ -54,7 +54,7 @@ showSignUp = e => {
     </div>
 
     <div>
-      <SignUp showSignUp={this.showSignUp} showSignUp={this.state.showSignUp}/>
+      <SignUp showSignUp={this.showSignUp} addUserToList={this.addUserToList} showSignUp={this.state.showSignUp}/>
     </div>
 
 

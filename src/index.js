@@ -5,11 +5,13 @@ import App from './App'
 import NavBar from './NavBar'
 import LandingPage from './LandingPage'
 import * as serviceWorker from './serviceWorker'
+import './index.css'
 
 const routing = (
   <Router>
     <div>
-      <LandingPage />
+      <NavBar />
+      <App />
     </div>
   </Router>
 )

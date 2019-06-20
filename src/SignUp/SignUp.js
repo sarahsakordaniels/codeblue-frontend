@@ -36,8 +36,7 @@ handleChange=(event)=>{
  this.setState({[name]: value})
 }
 
-handleSubmit = (event)=> {
- event.preventDefault()
+handleSubmit = ()=> {
  this.addNewUser(this.state.name, this.state.email, this.state.password)
  this.props.addUserToList(this.state.name, this.state.email, this.state.password)
  this.setState({
@@ -53,25 +52,52 @@ handleSubmit = (event)=> {
          return null
        }
 
-       (async function getFormValues () {
-       const {value: formValues} = await Swal.fire({
-         title: 'Multiple inputs',
-         html:
-           '<input id="swal-input1" class="swal2-input">' +
-           '<input id="swal-input2" class="swal2-input">',
-         focusConfirm: false,
-         preConfirm: () => {
-           return [
-             document.getElementById('swal-input1').value,
-             document.getElementById('swal-input2').value
-           ]
+
+       Swal.mixin({
+         confirmButtonText: 'Next &rarr;',
+         showCancelButton: true,
+         progressSteps: ['1', '2', '3']
+       }).queue([
+         {
+           title: 'Create Account',
+           input: 'text',
+           text: 'Your Name:',
+           inputPlaceholder: 'Jane Doe, RN'
+         },
+         {
+           title: 'Create Account',
+           input: 'text',
+           text: 'Email:',
+           inputPlaceholder: 'jdoe@hospital.com'
+         },
+         {
+           title: 'Create Account',
+           input: 'password',
+           text: 'Password:'
+        }
+       ]).then((result) => {
+         if (result.value)
+           this.setState({
+             name:result.value[0],
+             email:result.value[1],
+             password:result.value[2]
+           })
+           this.handleSubmit()
+           if (result.value){
+             Swal.fire({
+             title: 'Account Created!',
+             text: 'Please log in to access patient data.',
+             confirmButtonText: 'Close'
+           })
+         }
+         else {
+           Swal.fire({
+             title: 'Account Creation Unsuccessful',
+             text: 'Please try again.',
+             confirmButtonText: 'Close'
+           })
          }
        })
-
-       if (formValues) {
-         Swal.fire(JSON.stringify(formValues))
-       }
-       })()
 
    return (
 
