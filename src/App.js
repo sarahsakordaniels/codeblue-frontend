@@ -98,12 +98,9 @@ class App extends Component{
 
     return(
       <div>
-        <div style={{ color: '#d4dde1', padding: 25}}>
-          <body>
-          </body>
-        </div>
+        <NavBar />
         <center>
-
+          <br />
           <div>
             <img class="image animated infinite pulse slow" style={{marginTop: 15, marginBottom: 30, borderTopRightRadius: 200, borderTopLeftRadius: 30, borderBottomLeftRadius: 200, borderStyle: 'solid', borderWidth: 10, borderColor: '#d4dde1'}} src='https://lh3.googleusercontent.com/m3WgEgF8_vZkWx1PQNePIWEuu8Cg0OEKhJwWEFFqVSxcwZNlcRu6wxVDxitJWF1HGEI6mDUJTZveyhJ2_97wy5kKLnMRn5JeMB6iGDq2MlYbD7bPj7sphTiJ-XLMCHBr1lCJYOK-UmDRzm6vfRo7kleRypk7ewCX5S3MeJcXdCsLBVoQoqMzFdOD0pSQGIwOSELyCiHCkR7_txP1Ou2hpV45_UTe75Z3fSSYEkDa90Y05JbH5XJLRaCifGl66mEb5PeDAJdB04YhgNZqxnEUWciZq5bxT07P_3cBea7kOkXaESeiIAPh_e0Pf8vC86GLDld8bipD_i6za0Juo5EcQsnqfZ0KpSE34a1GPeHeOXGfucZhmFOC65HguAnQS9YuYU-KIwPB6k4WgHbg6VeCzIsmz4FQbNs8X9cmDVtMSiLGhdOs8bk7H7AwVGEsqbxJN6geFHRMmv0dz162SsGnvFdxlkY6od1TZi9OWdmglUqyHeaG7qVgDU-AECzRt6_AtXw4K79nmeCE7oyIeCHPmDT5MRz9zs1N7MOda0uEninh1rpEcoF9UKsQ1JuiPUXlauYvq1XGRzMXnJaFLZQGmRMiHmahi_mHH2lK09hdbSA4bdin_gofIDHJTMt2Sja91MDJsnbhrLWfDaG8osIODZZhvAHjML4=w1316-h670-no' />
           </div>
@@ -115,20 +112,16 @@ class App extends Component{
           <hr />
      <div style={{ padding: 20}}>
        <Grid container spacing={5} alignContent="center" alignItems="center" justify="center">
-         <div style={{color: '#d4dde1', padding: 40, backgroundColor: 'rgba(155, 160, 166, 0.71)', borderRadius: '100% 0% 100% 0% / 100% 0% 100% 0%'}}>
-             <Button variant="contained" style={{backgroundColor: '#aa4b41',color: '#d4dde1', fontFamily:'Montserrat', boxShadow: "2px 2px 2px 2px #2d3033"}} size="large" onClick={this.showSignUp}>
+         <div class ="row" style={{color: '#d4dde1', padding: 40, backgroundColor: 'rgba(155, 160, 166, 0.71)', borderRadius: '100% 0% 100% 0% / 100% 0% 100% 0%'}}>
+             <Button variant="contained" style={{margin: 10, backgroundColor: '#aa4b41',color: '#d4dde1', fontFamily:'Montserrat', boxShadow: "2px 2px 2px 2px #2d3033"}} size="large" onClick={this.showSignUp}>
                Create Account
              </Button>
-               <br/>
-               <br/>
-               <br/>
-             <Button variant="contained" style={{backgroundColor: '#aa4b41', color: '#d4dde1', fontFamily:'Montserrat', boxShadow: "2px 2px 2px 2px #2d3033"}} size="large" onClick={this.showSignIn}>
+
+             <Button variant="contained" style={{margin: 10, backgroundColor: '#aa4b41', color: '#d4dde1', fontFamily:'Montserrat', boxShadow: "2px 2px 2px 2px #2d3033"}} size="large" onClick={this.showSignIn}>
                Log In
              </Button>
-             <br/>
-             <br/>
-             <br/>
-             <Button variant="contained" style={{backgroundColor: '#aa4b41', color: '#d4dde1', fontFamily:'Montserrat', boxShadow: "2px 2px 2px 2px #2d3033"}} size="large" onClick={this.showCodeContainer}>
+
+             <Button variant="contained" style={{margin: 10, backgroundColor: '#aa4b41', color: '#d4dde1', fontFamily:'Montserrat', boxShadow: "2px 2px 2px 2px #2d3033"}} size="large" onClick={this.showCodeContainer}>
                Code Blue Demo
              </Button>
          </div>

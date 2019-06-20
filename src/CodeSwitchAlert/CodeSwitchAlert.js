@@ -1,5 +1,7 @@
 import React, {Component} from "react"
-// import "./CodeSwitchAlert.css"
+import ReactDOM from 'react-dom';
+import "./CodeSwitchAlert.css"
+import PropTypes from "prop-types"
 
 class CodeSwitchAlert extends Component {
 
@@ -12,7 +14,7 @@ render() {
       return null
     }
 
-    return(
+    return ReactDOM.createPortal(
       <div class="modal" id="modal">
         <center>
         <h2>Switch Compressors!</h2>
@@ -25,10 +27,14 @@ render() {
           </button>
         </div>
         </center>
-      </div>
+      </div>,
+      document.body
     )
   }
 }
-
+CodeSwitchAlert.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  showCodeSwitchAlert: PropTypes.bool.isRequired,
+}
 
 export default CodeSwitchAlert

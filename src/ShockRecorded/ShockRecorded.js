@@ -1,6 +1,7 @@
 import React, {Component} from "react"
-// import "./ShockRecorded.css"
-
+import "./ShockRecorded.css"
+import PropTypes from "prop-types"
+import ReactDOM from 'react-dom';
 
 
 class ShockRecorded extends Component {
@@ -12,7 +13,7 @@ class ShockRecorded extends Component {
     if (!this.props.showShockRecorded) {
       return null
     }
-    return(
+    return ReactDOM.createPortal(
       <div class="modal" id="modal">
         <center>
         <h2>Shock Recorded</h2>
@@ -23,9 +24,14 @@ class ShockRecorded extends Component {
           </button>
         </div>
         </center>
-      </div>
+      </div>,
+      document.body
     )
   }
+}
+ShockRecorded.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  showShockRecorded: PropTypes.bool.isRequired
 }
 
 export default ShockRecorded

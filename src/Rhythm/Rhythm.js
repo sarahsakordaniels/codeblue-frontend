@@ -1,5 +1,5 @@
 import React from 'react'
-// import './Rhythm.css'
+import './Rhythm.css'
 
 const Rhythm = (props) => {
 

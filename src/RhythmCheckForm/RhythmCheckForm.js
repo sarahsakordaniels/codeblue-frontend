@@ -229,3 +229,7 @@ RhythmCheckForm.propTypes = {
 }
 
 export default RhythmCheckForm
+
+// <button onClick={this.handleClick} value="Ventricular Tachycardia">Ventricular Fibrillation</button><br />
+// <button onClick={this.handleClick} value="Pulseless Electrical Activity">Pulseless Electrical Activity</button><br />
+// <button onClick={this.handleClick} value="Asystole">Asystole</button>

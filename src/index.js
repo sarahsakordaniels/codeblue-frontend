@@ -10,7 +10,6 @@ import './index.css'
 const routing = (
   <Router>
     <div>
-      <NavBar />
       <App />
     </div>
   </Router>

@@ -1,6 +1,7 @@
 import React, {Component} from "react"
-// import "./RoscAlert.css"
-
+import "./RoscAlert.css"
+import PropTypes from "prop-types"
+import ReactDOM from 'react-dom';
 
 const today = new Date()
 const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
@@ -43,7 +44,7 @@ class RoscAlert extends Component {
     const today = new Date()
     const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
 
-    return(
+    return ReactDOM.createPortal(
       <div class="modal" id="modal">
         <center>
         <h2>Return Of Spontaneous Circulation (ROSC)</h2>
@@ -59,10 +60,14 @@ class RoscAlert extends Component {
           </button>
         </div>
         </center>
-      </div>
-        )
+      </div>,
+      document.body
+    )
   }
 }
-
+RoscAlert.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  showRoscAlert: PropTypes.bool.isRequired
+}
 
 export default RoscAlert

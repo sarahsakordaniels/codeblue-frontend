@@ -1,5 +1,7 @@
 import React, {Component} from "react"
-// import "./EndPatientStatus.css"
+import ReactDOM from 'react-dom';
+import "./EndPatientStatus.css"
+import PropTypes from "prop-types"
 
 class EndPatientStatus extends Component {
   constructor(props){
@@ -74,7 +76,7 @@ render() {
     const today = new Date()
     const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
 
-    return(
+    return ReactDOM.createPortal(
 
       <div class="modal" id="modal">
 
@@ -107,9 +109,14 @@ render() {
           </button>
         </div>
         </center>
-      </div>
-        )
+      </div>,
+      document.body
+    )
   }
+}
+EndPatientStatus.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  showEndPatientStatus: PropTypes.bool.isRequired,
 }
 
 export default EndPatientStatus

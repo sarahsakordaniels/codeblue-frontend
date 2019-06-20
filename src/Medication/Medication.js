@@ -1,5 +1,5 @@
 import React from 'react'
-// import './Medication.css'
+import './Medication.css'
 
 const Medication = (props) => {
 

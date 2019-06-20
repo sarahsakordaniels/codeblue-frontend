@@ -1,5 +1,5 @@
 import React from 'react'
-// import './Shock.css'
+import './Shock.css'
 
 const Shock = (props) => {
 

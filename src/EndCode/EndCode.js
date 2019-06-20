@@ -1,5 +1,7 @@
 import React, {Component} from "react"
-// import "./EndCode.css"
+import ReactDOM from 'react-dom';
+import "./EndCode.css"
+import PropTypes from "prop-types"
 
 class EndCode extends Component {
 
@@ -22,7 +24,7 @@ class EndCode extends Component {
       console.log(this.props.endTime)
 
 
-      return(
+      return ReactDOM.createPortal(
         <div class="modal" id="modal">
           <center>
           <h2>End Code</h2>
@@ -36,9 +38,14 @@ class EndCode extends Component {
             </button>
           </div>
           </center>
-        </div>
-            )
+        </div>,
+        document.body
+      )
     }
   }
+  EndCode.propTypes = {
+    onClose: PropTypes.func.isRequired,
+    showEndCode: PropTypes.bool.isRequired,
+}
 
 export default EndCode

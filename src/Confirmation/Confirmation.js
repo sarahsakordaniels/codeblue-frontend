@@ -1,5 +1,7 @@
 import React, {Component} from "react"
-// import "./Confirmation.css"
+import "./Confirmation.css"
+import PropTypes from "prop-types"
+import ReactDOM from 'react-dom';
 import Medication from '../Medication/Medication'
 import Shock from '../Shock/Shock'
 import Rhythm from '../Rhythm/Rhythm'
@@ -54,7 +56,7 @@ class Confirmation extends Component {
       return null
     }
 
-    return (
+    return ReactDOM.createPortal(
       <div class="modal" id="modal">
         <center>
         <h2>Confirm Data</h2>
@@ -86,9 +88,15 @@ class Confirmation extends Component {
 
     </div>
     </center>
-  </div>
+  </div>,
+document.body
+
     )
   }
+}
+Confirmation.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  showConfirmation: PropTypes.bool.isRequired
 }
 
 export default Confirmation
