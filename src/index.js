@@ -2,12 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 import App from './App'
+import NavBar from './NavBar'
+import LandingPage from './LandingPage'
 import * as serviceWorker from './serviceWorker'
 
 const routing = (
   <Router>
     <div>
-      <App />
+      <LandingPage />
     </div>
   </Router>
 )

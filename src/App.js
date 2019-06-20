@@ -65,21 +65,6 @@ class App extends Component{
 
     return(
 <div>
-
-
-
-  <nav class="uk-navbar-container" uk-navbar>
-      <div class="uk-navbar-left">
-          <ul class="uk-navbar-nav">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/patients">Patients</Link></li>
-              <li><Link to="/signin">Sign In</Link></li>
-              <li><Link to="/signup">Sign Up</Link></li>
-              <li><Link to="/code">Code</Link></li>
-          </ul>
-      </div>
-  </nav>
-
         <div class="title">
         <center>
         <h1>Corporate American Hospital</h1>

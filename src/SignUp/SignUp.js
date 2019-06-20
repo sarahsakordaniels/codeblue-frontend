@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import Swal from 'sweetalert2'
+
 
 class SignUp extends Component {
 constructor(props){
@@ -45,23 +47,48 @@ handleSubmit = (event)=> {
  })
 }
 
-// create = ()=> {
-//  window.location = ‘/create-account’
-// }
-
-
  render() {
+
+      if (!this.props.showSignUp) {
+         return null
+       }
+
+       (async function getFormValues () {
+       const {value: formValues} = await Swal.fire({
+         title: 'Multiple inputs',
+         html:
+           '<input id="swal-input1" class="swal2-input">' +
+           '<input id="swal-input2" class="swal2-input">',
+         focusConfirm: false,
+         preConfirm: () => {
+           return [
+             document.getElementById('swal-input1').value,
+             document.getElementById('swal-input2').value
+           ]
+         }
+       })
+
+       if (formValues) {
+         Swal.fire(JSON.stringify(formValues))
+       }
+       })()
+
    return (
-     <form onSubmit={this.handleSubmit}>
-       <h2>Sign Up For Account</h2>
-            Name:<input name="name" value={this.state.name} onChange={this.handleChange}/>
-            Email:<input name="email" value={this.state.email} onChange={this.handleChange}/>
-            Password:<input name="password" value={this.state.password} onChange={this.handleChange}/>
-             <br/>
-             <button>Sign Up</button>
-         </form>
-       )
- }
+
+<p>This is a placeholder.</p>
+
+
+      )
+   }
 }
 
 export default SignUp
+
+// <form onSubmit={this.handleSubmit}>
+//   <h2>Sign Up For Account</h2>
+//        Name:<input name="name" value={this.state.name} onChange={this.handleChange}/>
+//        Email:<input name="email" value={this.state.email} onChange={this.handleChange}/>
+//        Password:<input name="password" value={this.state.password} onChange={this.handleChange}/>
+//         <br/>
+//         <button>Sign Up</button>
+//     </form>
