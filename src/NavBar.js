@@ -31,7 +31,7 @@ export default function ButtonAppBar(props) {
   return (
 
     <div className={classes.root} >
-      <AppBar position="static" style={{backgroundColor: '#2d3033'}}>
+      <AppBar position="fixed" style={{backgroundColor: '#2d3033'}}>
         <Toolbar>
           <SimpleMenu/>
           <Typography variant="h6" style={{color: '#d4dde1', fontFamily:'Montserrat'}} className={classes.title}>

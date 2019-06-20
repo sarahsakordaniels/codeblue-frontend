@@ -30,7 +30,7 @@ class App extends Component{
       patients: [],
       showSignUp: false,
       showSignIn: false,
-      showCodeContainer: false
+      // showCodeContainer: false
       }
    }
 
@@ -98,11 +98,10 @@ class App extends Component{
 
     return(
       <div>
-        <NavBar />
         <center>
           <br />
           <div>
-            <img class="image animated infinite pulse slow" style={{marginTop: 15, marginBottom: 30, borderTopRightRadius: 200, borderTopLeftRadius: 30, borderBottomLeftRadius: 200, borderStyle: 'solid', borderWidth: 10, borderColor: '#d4dde1'}} src='https://lh3.googleusercontent.com/m3WgEgF8_vZkWx1PQNePIWEuu8Cg0OEKhJwWEFFqVSxcwZNlcRu6wxVDxitJWF1HGEI6mDUJTZveyhJ2_97wy5kKLnMRn5JeMB6iGDq2MlYbD7bPj7sphTiJ-XLMCHBr1lCJYOK-UmDRzm6vfRo7kleRypk7ewCX5S3MeJcXdCsLBVoQoqMzFdOD0pSQGIwOSELyCiHCkR7_txP1Ou2hpV45_UTe75Z3fSSYEkDa90Y05JbH5XJLRaCifGl66mEb5PeDAJdB04YhgNZqxnEUWciZq5bxT07P_3cBea7kOkXaESeiIAPh_e0Pf8vC86GLDld8bipD_i6za0Juo5EcQsnqfZ0KpSE34a1GPeHeOXGfucZhmFOC65HguAnQS9YuYU-KIwPB6k4WgHbg6VeCzIsmz4FQbNs8X9cmDVtMSiLGhdOs8bk7H7AwVGEsqbxJN6geFHRMmv0dz162SsGnvFdxlkY6od1TZi9OWdmglUqyHeaG7qVgDU-AECzRt6_AtXw4K79nmeCE7oyIeCHPmDT5MRz9zs1N7MOda0uEninh1rpEcoF9UKsQ1JuiPUXlauYvq1XGRzMXnJaFLZQGmRMiHmahi_mHH2lK09hdbSA4bdin_gofIDHJTMt2Sja91MDJsnbhrLWfDaG8osIODZZhvAHjML4=w1316-h670-no' />
+            <img class="image animated infinite pulse slow" style={{ width: 'auto', height:300, marginTop: 15, marginBottom: 30, borderTopRightRadius: 200, borderTopLeftRadius: 30, borderBottomLeftRadius: 200, borderStyle: 'solid', borderWidth: 10, borderColor: '#d4dde1'}} src='https://lh3.googleusercontent.com/m3WgEgF8_vZkWx1PQNePIWEuu8Cg0OEKhJwWEFFqVSxcwZNlcRu6wxVDxitJWF1HGEI6mDUJTZveyhJ2_97wy5kKLnMRn5JeMB6iGDq2MlYbD7bPj7sphTiJ-XLMCHBr1lCJYOK-UmDRzm6vfRo7kleRypk7ewCX5S3MeJcXdCsLBVoQoqMzFdOD0pSQGIwOSELyCiHCkR7_txP1Ou2hpV45_UTe75Z3fSSYEkDa90Y05JbH5XJLRaCifGl66mEb5PeDAJdB04YhgNZqxnEUWciZq5bxT07P_3cBea7kOkXaESeiIAPh_e0Pf8vC86GLDld8bipD_i6za0Juo5EcQsnqfZ0KpSE34a1GPeHeOXGfucZhmFOC65HguAnQS9YuYU-KIwPB6k4WgHbg6VeCzIsmz4FQbNs8X9cmDVtMSiLGhdOs8bk7H7AwVGEsqbxJN6geFHRMmv0dz162SsGnvFdxlkY6od1TZi9OWdmglUqyHeaG7qVgDU-AECzRt6_AtXw4K79nmeCE7oyIeCHPmDT5MRz9zs1N7MOda0uEninh1rpEcoF9UKsQ1JuiPUXlauYvq1XGRzMXnJaFLZQGmRMiHmahi_mHH2lK09hdbSA4bdin_gofIDHJTMt2Sja91MDJsnbhrLWfDaG8osIODZZhvAHjML4=w1316-h670-no' />
           </div>
             <br />
           <hr />
@@ -121,8 +120,10 @@ class App extends Component{
                Log In
              </Button>
 
-             <Button variant="contained" style={{margin: 10, backgroundColor: '#aa4b41', color: '#d4dde1', fontFamily:'Montserrat', boxShadow: "2px 2px 2px 2px #2d3033"}} size="large" onClick={this.showCodeContainer}>
-               Code Blue Demo
+             <Button variant="contained" style={{margin: 10, backgroundColor: '#aa4b41', color: '#d4dde1', fontFamily:'Montserrat', boxShadow: "2px 2px 2px 2px #2d3033"}} size="large">
+               <Link to="/code">
+                 Code Blue Demo
+              </Link>
              </Button>
          </div>
        </Grid>
@@ -132,8 +133,9 @@ class App extends Component{
           <div>
             <SignUp showSignUp={this.showSignUp} addUserToList={this.addUserToList} showSignUp={this.state.showSignUp}/>
             <SignIn showSignIn={this.showSignIn} addUserToList={this.addUserToList} showSignIn={this.state.showSignIn}/>
-          {this.state.showCodeContainer ?  <CodeContainer patients={this.state.patients} users={this.state.users} showCodeContainer={this.state.showCodeContainer} showCodeContainer={this.showCodeContainer}/> : null}
-
+              <Switch>
+              <Route path="/code" render={(props)=> <CodeContainer {...props} patients={this.state.patients} users={this.state.users}/>} />
+              </Switch>
           </div>
           <Footer />
         </center>
@@ -167,13 +169,14 @@ export default App
 // </div>
 // </div>
 
+// {this.state.showCodeContainer ?  <CodeContainer patients={this.state.patients} users={this.state.users} showCodeContainer={this.state.showCodeContainer} showCodeContainer={this.showCodeContainer}/> : null}
 
 // <Switch>
 //   <Route path="/signin" render={(props)=> <SignIn {...props} />} />
 //   <Route path="/patients" render={(props)=> <PatientList patients={this.state.patients} />} />
 //   <Route path="/signup" render={(props)=> <SignUp {...props} addUserToList={this.addUserToList} />} />
 //   <Route path="/addpatient" render={(props)=> <AddPatientForm {...props} addPatient={this.addPatient} patients={this.state.patients} users={this.state.users}/>} />
-//   <Route path="/code" render={(props)=> <CodeContainer {...props} patients={this.state.patients} users={this.state.users}/>} />
+  // <Route path="/code" render={(props)=> <CodeContainer {...props} patients={this.state.patients} users={this.state.users}/>} />
 // </Switch>
 
 

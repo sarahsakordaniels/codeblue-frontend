@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import App from './App'
 import NavBar from './NavBar'
 import LandingPage from './LandingPage'
@@ -10,6 +10,7 @@ import './index.css'
 const routing = (
   <Router>
     <div>
+      <NavBar />
       <App />
     </div>
   </Router>

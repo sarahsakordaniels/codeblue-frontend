@@ -10,7 +10,7 @@ import Metronome from '../Metronome/Metronome'
 import EndCode from '../EndCode/EndCode'
 import EndPatientStatus from '../EndPatientStatus/EndPatientStatus'
 import Confirmation from '../Confirmation/Confirmation'
-// import './Timer.css'
+import './Timer.css'
 
 const today = new Date()
 const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Timer from "../Timer/Timer"
+import Modal from '@material-ui/core/Modal';
 
 class CodeContainer extends Component{
   constructor(props){
@@ -111,21 +112,20 @@ getCodes = () =>{
   }
 
   render = () => {
-    if (!this.props.showCodeContainer) {
-       return null
- }
+
 
     return(
+
       <div>
-      <Timer
-        getCodes={this.getCodes} findMaxId={this.findMaxId}
-        shocks={this.state.shocks} rhythms={this.state.rhythms}
-        meds={this.state.meds} codes={this.state.codes} patients={this.props.patients}
-        addCode={this.addCode} addShock={this.addShock} addEndTime={this.addEndTime}
-        addMed={this.addMed} addRhythm={this.addRhythm} addPatientStatus={this.addPatientStatus}
-        addPatientName={this.addPatientName} maxId={this.state.maxId}
-        />
-      </div>
+         <Timer
+           getCodes={this.getCodes} findMaxId={this.findMaxId}
+           shocks={this.state.shocks} rhythms={this.state.rhythms}
+           meds={this.state.meds} codes={this.state.codes} patients={this.props.patients}
+           addCode={this.addCode} addShock={this.addShock} addEndTime={this.addEndTime}
+           addMed={this.addMed} addRhythm={this.addRhythm} addPatientStatus={this.addPatientStatus}
+           addPatientName={this.addPatientName} maxId={this.state.maxId}
+           />
+       </div>
     )
   }
 }
