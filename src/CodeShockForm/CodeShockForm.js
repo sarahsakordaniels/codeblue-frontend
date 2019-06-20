@@ -71,6 +71,7 @@ class CodeShockForm extends Component {
         this.handleSubmit()
         if (result.value){
           Swal.fire({
+          type: 'success',
           title: 'Shock Recorded',
           text: 'Continue compressions',
           confirmButtonText: 'Close'
@@ -78,6 +79,7 @@ class CodeShockForm extends Component {
       }
       else {
         Swal.fire({
+          type: 'error',
           title: 'No Shock Recorded',
           text: 'Continue compressions',
           confirmButtonText: 'Close'
