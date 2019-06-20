@@ -17,3 +17,14 @@
     -webkit-box-shadow: 3px 3px 5px 6px #ccc;
     box-shadow:         3px 3px 5px 6px #ccc;
   }
+
+  .wpframe {
+  background: #fff;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  padding: 8px;
+  -webkit-box-shadow: 1px 2px 1px #d1d1d1;
+  -moz-box-shadow: 1px 2px 1px #d1d1d1;
+  box-shadow: 1px 2px 1px #d1d1d1;
+  }

@@ -46,6 +46,9 @@ handleSubmit = (event)=> {
 
 
  render() {
+   if (!this.props.showSignIn) {
+      return null
+    }
    return (
      <form onSubmit={this.handleSubmit}>
        <h2>Please Sign In</h2>
