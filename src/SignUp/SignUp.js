@@ -85,6 +85,7 @@ handleSubmit = ()=> {
            this.handleSubmit()
            if (result.value){
              Swal.fire({
+            type: 'success',
              title: 'Account Created!',
              text: 'Please log in to access patient data.',
              confirmButtonText: 'Close'
@@ -92,6 +93,7 @@ handleSubmit = ()=> {
          }
          else {
            Swal.fire({
+             type: 'error',
              title: 'Account Creation Unsuccessful',
              text: 'Please try again.',
              confirmButtonText: 'Close'
@@ -101,7 +103,7 @@ handleSubmit = ()=> {
 
    return (
 
-<p>This is a placeholder.</p>
+<div></div>
 
 
       )

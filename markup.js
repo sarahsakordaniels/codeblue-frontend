@@ -6,8 +6,13 @@ Swal.mixin({
   progressSteps: ['1', '2']
 }).queue([
   {
-    title: 'Record Shock',
-    text: 'Energy Setting:',
+    title: 'Stop Compressions and Check Pulse',
+    text: 'Does the patient have a pulse?',
+    html:'<div class="pulse-check">
+    Does the patient have a pulse?<br/>
+    <button onClick={this.handlePulseClickYes}>Yes</button>
+    <button onClick={this.handlePulseClickNo}>No</button>
+    </div>'
     inputPlaceholder: 'Enter in Joules'
   },
   {

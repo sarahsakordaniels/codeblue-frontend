@@ -9,6 +9,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserMd } from '@fortawesome/free-solid-svg-icons'
 import './NavBar.css'
+import SimpleMenu from './Menu.js'
+import { Route, Switch, Link } from 'react-router-dom'
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,7 +25,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(props) {
   const classes = useStyles();
 
   return (
@@ -30,9 +33,7 @@ export default function ButtonAppBar() {
     <div className={classes.root} >
       <AppBar position="static" style={{backgroundColor: '#2d3033'}}>
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} style={{color: '#d4dde1'}} aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
+          <SimpleMenu/>
           <Typography variant="h6" style={{color: '#d4dde1', fontFamily:'Montserrat'}} className={classes.title}>
             C o d e C o u r s e
           </Typography>

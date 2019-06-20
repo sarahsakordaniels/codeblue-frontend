@@ -15,8 +15,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeartbeat } from '@fortawesome/free-solid-svg-icons'
 import Grid from '@material-ui/core/Grid';
 import LinearProgress from '@material-ui/core/LinearProgress';
-
-
+import NavBar from './NavBar'
+import Menu from './Menu'
 
 
 
@@ -29,9 +29,10 @@ class App extends Component{
       users: [],
       patients: [],
       showSignUp: false,
-      showSignIn: false
+      showSignIn: false,
+      showCodeContainer: false
       }
-  }
+   }
 
   componentDidMount = () => {
     fetch('http://localhost:3000/users')
@@ -64,6 +65,12 @@ class App extends Component{
     showSignIn = e => {
       this.setState({
         showSignIn: !this.state.showSignIn
+      })
+    }
+
+    showCodeContainer = e => {
+      this.setState({
+        showCodeContainer: !this.state.showCodeContainer
       })
     }
 
@@ -108,30 +115,36 @@ class App extends Component{
           <hr />
      <div style={{ padding: 20}}>
        <Grid container spacing={5} alignContent="center" alignItems="center" justify="center">
-         <div style={{color: '#d4dde1', padding: 50, backgroundColor: 'rgba(155, 160, 166, 0.71)', borderRadius: '100% 0% 100% 0% / 100% 0% 100% 0%'}}>
+         <div style={{color: '#d4dde1', padding: 40, backgroundColor: 'rgba(155, 160, 166, 0.71)', borderRadius: '100% 0% 100% 0% / 100% 0% 100% 0%'}}>
              <Button variant="contained" style={{backgroundColor: '#aa4b41',color: '#d4dde1', fontFamily:'Montserrat', boxShadow: "2px 2px 2px 2px #2d3033"}} size="large" onClick={this.showSignUp}>
                Create Account
              </Button>
                <br/>
                <br/>
+               <br/>
              <Button variant="contained" style={{backgroundColor: '#aa4b41', color: '#d4dde1', fontFamily:'Montserrat', boxShadow: "2px 2px 2px 2px #2d3033"}} size="large" onClick={this.showSignIn}>
                Log In
+             </Button>
+             <br/>
+             <br/>
+             <br/>
+             <Button variant="contained" style={{backgroundColor: '#aa4b41', color: '#d4dde1', fontFamily:'Montserrat', boxShadow: "2px 2px 2px 2px #2d3033"}} size="large" onClick={this.showCodeContainer}>
+               Code Blue Demo
              </Button>
          </div>
        </Grid>
      </div>
 
 
-
-
-
-
           <div>
             <SignUp showSignUp={this.showSignUp} addUserToList={this.addUserToList} showSignUp={this.state.showSignUp}/>
             <SignIn showSignIn={this.showSignIn} addUserToList={this.addUserToList} showSignIn={this.state.showSignIn}/>
+          {this.state.showCodeContainer ?  <CodeContainer patients={this.state.patients} users={this.state.users} showCodeContainer={this.state.showCodeContainer} showCodeContainer={this.showCodeContainer}/> : null}
+
           </div>
           <Footer />
         </center>
+
       </div>
     )
   }
@@ -144,7 +157,7 @@ export default App
 //   <header>
 //     <div class="nav">
 //       <ul>
-//         <li class="home"><Link to="/">Home</Link></li>
+        // <li class="home"><Link to="/">Home</Link></li>
 //         <li class="tutorials"><Link to="/patients">Patients</Link></li>
 //         <li class="about"><Link to="/signin">Sign In</Link></li>
 //         <li class="news"><Link to="/signup">Sign Up</Link></li>
@@ -162,7 +175,6 @@ export default App
 // </div>
 
 
-
 // <Switch>
 //   <Route path="/signin" render={(props)=> <SignIn {...props} />} />
 //   <Route path="/patients" render={(props)=> <PatientList patients={this.state.patients} />} />
@@ -170,3 +182,6 @@ export default App
 //   <Route path="/addpatient" render={(props)=> <AddPatientForm {...props} addPatient={this.addPatient} patients={this.state.patients} users={this.state.users}/>} />
 //   <Route path="/code" render={(props)=> <CodeContainer {...props} patients={this.state.patients} users={this.state.users}/>} />
 // </Switch>
+
+
+// <CodeContainer patients={this.state.patients} users={this.state.users} showCodeContainer={this.state.showCodeContainer} showCodeContainer={this.showCodeContainer}/>

@@ -1,5 +1,8 @@
 import React, {Component} from "react"
-// import "./RhythmCheckForm.css"
+import "./RhythmCheckForm.css"
+import PropTypes from "prop-types"
+import ReactDOM from 'react-dom';
+
 
 class RhythmCheckForm extends Component {
   constructor(props){
@@ -13,6 +16,7 @@ class RhythmCheckForm extends Component {
       time:'',
       showGoodRhythmSelector: false
     })
+
   }
 
   onClose = e => {
@@ -110,7 +114,8 @@ class RhythmCheckForm extends Component {
 
 
     })
-
+    // this.onClose()
+    // this.props.showRoscAlert()
 }
 
   openCodeShockForm = (event) => {
@@ -147,7 +152,7 @@ class RhythmCheckForm extends Component {
       return null
     }
 
-    return (
+    return ReactDOM.createPortal(
       <div class="modal" id="modal">
         <center>
         <h2>Stop Compressions & Check Pulse</h2>
@@ -212,9 +217,15 @@ class RhythmCheckForm extends Component {
 
     </div>
     </center>
-  </div>
+  </div>,
+document.body
 
     )
   }
 }
+RhythmCheckForm.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  showRhythmCheckForm: PropTypes.bool.isRequired
+}
+
 export default RhythmCheckForm

@@ -1,11 +1,15 @@
 import React, {Component} from 'react'
+import Swal from 'sweetalert2'
+
 
 class SignIn extends Component {
-
- state ={
+constructor(props){
+  super(props)
+ this.state ={
    email: '',
    password: ''
  }
+}
 
  logIn = (email, password) => {
    return fetch("http://localhost:3000/authenticate", {
@@ -31,8 +35,7 @@ handleChange=(event)=>{
  this.setState({[name]: value})
 }
 
-handleSubmit = (event)=> {
- event.preventDefault()
+handleSubmit = ()=> {
  this.logIn(this.state.email, this.state.password)
  this.setState({
    email:'',
@@ -48,15 +51,52 @@ handleSubmit = (event)=> {
  render() {
    if (!this.props.showSignIn) {
       return null
-    }
+}
+
+Swal.mixin({
+  confirmButtonText: 'Next &rarr;',
+  showCancelButton: true,
+  progressSteps: ['1', '2']
+}).queue([
+  {
+    title: 'Log In',
+    input: 'text',
+    text: 'Email:',
+    inputPlaceholder: 'jdoe@hospital.com'
+  },
+  {
+    title: 'Log In',
+    input: 'password',
+    text: 'Password:'
+ }
+]).then((result) => {
+  if (result.value)
+    this.setState({
+      email:result.value[0],
+      password:result.value[1]
+    })
+    this.handleSubmit()
+    if (result.value){
+      Swal.fire({
+      type: 'success',
+      title: 'Login Successful!',
+      text: 'You will be redirected to the main page.',
+      confirmButtonText: 'Close'
+    })
+  }
+  else {
+    Swal.fire({
+      type: 'error',
+      title: 'Login Unsuccessful.',
+      text: 'Please try again.',
+      confirmButtonText: 'Close'
+    })
+  }
+})
+
+
    return (
-     <form onSubmit={this.handleSubmit}>
-       <h2>Please Sign In</h2>
-             <input name="email" value={this.state.email} onChange={this.handleChange}/>
-             <input name="password" value={this.state.password} onChange={this.handleChange}/>
-             <br/>
-             <button>Sign In</button>
-         </form>
+     <div></div>
        )
  }
 }

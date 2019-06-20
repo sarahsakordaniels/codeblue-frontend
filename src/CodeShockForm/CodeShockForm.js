@@ -35,7 +35,7 @@ class CodeShockForm extends Component {
       shockEnergy:''
     })
     this.onClose()
-    this.props.showShockRecorded()
+    // this.props.showShockRecorded()
   }
 
 

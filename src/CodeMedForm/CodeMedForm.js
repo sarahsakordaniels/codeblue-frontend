@@ -1,5 +1,7 @@
 import React, {Component} from "react"
-// import "./CodeMedForm.css"
+import "./CodeMedForm.css"
+import PropTypes from "prop-types"
+import ReactDOM from 'react-dom';
 
 
 class CodeMedForm extends Component {
@@ -172,7 +174,7 @@ class CodeMedForm extends Component {
     const today = new Date()
     const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
 
-    return (
+    return ReactDOM.createPortal(
       <div class="modal" id="modal" >
         <center>
         <h2>Record Medication</h2>
@@ -268,9 +270,15 @@ class CodeMedForm extends Component {
           </button>
         </div>
         </center>
-      </div>
+      </div>,
+      document.body
     )
   }
+}
+
+CodeMedForm.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  showCodeMedForm: PropTypes.bool.isRequired
 }
 
 export default CodeMedForm
