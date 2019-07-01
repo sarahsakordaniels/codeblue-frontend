@@ -18,9 +18,6 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import NavBar from './NavBar'
 import Menu from './Menu'
 
-
-
-
 class App extends Component{
   constructor(){
     super()
@@ -30,7 +27,6 @@ class App extends Component{
       patients: [],
       showSignUp: false,
       showSignIn: false,
-      // showCodeContainer: false
       }
    }
 
@@ -94,8 +90,6 @@ class App extends Component{
       }
 
   render = () => {
-
-
     return(
       <div>
         <center>
@@ -128,8 +122,6 @@ class App extends Component{
          </div>
        </Grid>
      </div>
-
-
           <div>
             <SignUp showSignUp={this.showSignUp} addUserToList={this.addUserToList} showSignUp={this.state.showSignUp}/>
             <SignIn showSignIn={this.showSignIn} addUserToList={this.addUserToList} showSignIn={this.state.showSignIn}/>
@@ -146,38 +138,3 @@ class App extends Component{
 }
 
 export default App
-
-// <div>
-// <body class="news">
-//   <header>
-//     <div class="nav">
-//       <ul>
-        // <li class="home"><Link to="/">Home</Link></li>
-//         <li class="tutorials"><Link to="/patients">Patients</Link></li>
-//         <li class="about"><Link to="/signin">Sign In</Link></li>
-//         <li class="news"><Link to="/signup">Sign Up</Link></li>
-//         <li class="contact"><Link to="/code">Code</Link></li>
-//       </ul>
-//     </div>
-//   </header>
-// </body>
-//
-// </div>
-// <div class='test'>
-// <div class="paper">
-//
-// </div>
-// </div>
-
-// {this.state.showCodeContainer ?  <CodeContainer patients={this.state.patients} users={this.state.users} showCodeContainer={this.state.showCodeContainer} showCodeContainer={this.showCodeContainer}/> : null}
-
-// <Switch>
-//   <Route path="/signin" render={(props)=> <SignIn {...props} />} />
-//   <Route path="/patients" render={(props)=> <PatientList patients={this.state.patients} />} />
-//   <Route path="/signup" render={(props)=> <SignUp {...props} addUserToList={this.addUserToList} />} />
-//   <Route path="/addpatient" render={(props)=> <AddPatientForm {...props} addPatient={this.addPatient} patients={this.state.patients} users={this.state.users}/>} />
-  // <Route path="/code" render={(props)=> <CodeContainer {...props} patients={this.state.patients} users={this.state.users}/>} />
-// </Switch>
-
-
-// <CodeContainer patients={this.state.patients} users={this.state.users} showCodeContainer={this.state.showCodeContainer} showCodeContainer={this.showCodeContainer}/>

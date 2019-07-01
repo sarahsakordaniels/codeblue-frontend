@@ -5,9 +5,9 @@ const Medication = (props) => {
 
   return(
       <div>
-        <p>Drug:{props.drug}</p>
-        <p>Dose:{props.dose}</p>
-        <p>Time Given:{props.time}</p>
+        <p>Drug: {props.drug}</p>
+        <p>Dose: {props.dose}</p>
+        <p>Time Given: {props.time}</p>
       </div>
     )
 }

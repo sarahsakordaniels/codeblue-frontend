@@ -205,7 +205,7 @@ class Timer extends Component {
 
     return (
 
-      <div>
+      <div style={{backgroundColor: "#2f505b", padding: 15, borderRadius: 30}}>
         <br/><br/>
 
           <center><select class="select-css" name="patient_id" type="number" value={this.props.patient_id} onChange={this.handlePatientChange}>
@@ -217,26 +217,24 @@ class Timer extends Component {
           </center>
 <br/>
         <center>
-        <div>
+        <div style={{color: '#ffffff'}}>
           {hours} : {minutes} : {seconds} : {centiseconds}
         </div>
 
         {this.state.timerOn === false && this.state.timerTime === 0 && (
-          <button onClick={this.startTimerInitial}>Begin Code</button>
+          <button class="butn" onClick={this.startTimerInitial}>Begin Code</button>
         )}
         {this.state.timerOn === true && (
-          <button onClick={this.stopTimer}>Stop</button>
+          <button class="butn" onClick={this.stopTimer}>Stop</button>
         )}
         {this.state.timerOn === false && this.state.timerTime > 0 && (
-          <button onClick={this.startTimer}>Resume</button>
+          <button class="butn" onClick={this.startTimer}>Resume</button>
         )}
         {this.state.timerOn === false && this.state.timerTime > 0 && (
-          <button onClick={this.resetTimer}>Reset</button>
+          <button  class="butn" onClick={this.resetTimer}>Reset</button>
         )}
        </center>
-      <br/>
-      <br/>
-      <br/>
+    
 
 <div>
           <center>

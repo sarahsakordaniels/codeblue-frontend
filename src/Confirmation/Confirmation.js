@@ -62,9 +62,10 @@ class Confirmation extends Component {
         <h2>Confirm Data</h2>
 
         <div class="content">
+          <center>
         <u><b>Patient</b></u>
         <br/>
-        {patientName} <br/>
+        {patientName} <br />
         <u><b>Medications</b></u>
         <br/>
         {medList}
@@ -74,7 +75,7 @@ class Confirmation extends Component {
         <u><b>Rhythms</b></u>
         <br/>
         {rhythmList}
-
+        </center>
         </div>
 
         <div class="actions">
