@@ -175,7 +175,7 @@ class CodeMedForm extends Component {
     const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
 
     return ReactDOM.createPortal(
-      <div class="modal" id="modal" >
+      <div class="modal" id="modal">
         <center>
         <h2>Record Medication</h2>
         <div class="content">

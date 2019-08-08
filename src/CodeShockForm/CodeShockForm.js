@@ -1,8 +1,7 @@
 import React, {Component} from "react"
-import Swal from 'sweetalert2'
-
-const today = new Date()
-const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
+import "./CodeShockForm.css"
+import PropTypes from "prop-types"
+import ReactDOM from 'react-dom';
 
 class CodeShockForm extends Component {
   constructor(props){
@@ -27,68 +26,49 @@ class CodeShockForm extends Component {
     })
   }
 
-  handleSubmit = () => {
+  handleSubmit = (event) => {
+    event.preventDefault()
     this.props.addShock(this.state.shockTime, this.state.shockEnergy)
     this.setState({
       shockEnergy:''
     })
     this.onClose()
+    this.props.showShockRecorded()
   }
 
   render = () => {
     if (!this.props.showCodeShockForm) {
       return null
     }
+    const today = new Date()
+    const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
 
-    Swal.mixin({
-      input: 'text',
-      confirmButtonText: 'Next &rarr;',
-      showCancelButton: true,
-      progressSteps: ['1', '2']
-    }).queue([
-      {
-        title: 'Record Shock',
-        text: 'Energy Setting:',
-        inputPlaceholder: 'Enter in Joules'
-      },
-      {
-        title: 'Record Shock',
-        text: 'Time of Shock:',
-        inputValue: `${time}`
-      }
-
-    ]).then((result) => {
-      if (result.value)
-        this.setState({
-        shockEnergy:result.value[0],
-        shockTime:(result.value[1])
-      })
-        this.handleSubmit()
-        if (result.value){
-          Swal.fire({
-          type: 'success',
-          title: 'Shock Recorded',
-          text: 'Continue compressions',
-          confirmButtonText: 'Close'
-        })
-      }
-      else {
-        Swal.fire({
-          type: 'error',
-          title: 'No Shock Recorded',
-          text: 'Continue compressions',
-          confirmButtonText: 'Close'
-        })
-      }
-    })
-
-
-    return(
-        <div>
+    return ReactDOM.createPortal(
+      <div class="modal" id="modal">
+        <center>
+        <h2>Record Shock</h2>
+        <div class="content">
+          <form onSubmit={this.handleSubmit}>
+            Energy Setting: <input name="shockEnergy" placeholder="Enter Number of Joules" onChange={this.handleChange} /><br/>
+            Time of Shock: <input name="shockTime" value={time}  />
+          </form>
         </div>
+        <div class="actions">
+          <button class="toggle-button" onClick={this.handleSubmit}>
+            Submit
+          </button>
+          <button class="toggle-button" onClick={this.onClose}>
+            Cancel
+          </button>
+        </div>
+        </center>
+      </div>, document.body
     )
   }
 }
-
+CodeShockForm.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  showCodeShockForm: PropTypes.bool.isRequired,
+}
 
 export default CodeShockForm
