@@ -14,7 +14,7 @@ class RoscAlert extends Component {
       patientStatus: "Alive"
     }
   }
-
+  
   onClose = e => {
     this.props.onClose && this.props.onClose(e)
   }

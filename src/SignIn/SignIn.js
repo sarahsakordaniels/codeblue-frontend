@@ -43,11 +43,6 @@ handleSubmit = ()=> {
  })
 }
 
-// create = ()=> {
-//  window.location = ‘/create-account’
-// }
-
-
  render() {
    if (!this.props.showSignIn) {
       return null

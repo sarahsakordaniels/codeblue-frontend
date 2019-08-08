@@ -111,11 +111,7 @@ class RhythmCheckForm extends Component {
       pulse: true,
       showGoodRhythmSelector: true,
       showRhythmSelector: false
-
-
     })
-    // this.onClose()
-    // this.props.showRoscAlert()
 }
 
   openCodeShockForm = (event) => {
@@ -143,11 +139,7 @@ class RhythmCheckForm extends Component {
     this.onClose()
     }
 
-
-
-
   render() {
-
     if (!this.props.showRhythmCheckForm) {
       return null
     }
@@ -156,16 +148,13 @@ class RhythmCheckForm extends Component {
       <div class="modal" id="modal">
         <center>
         <h2>Stop Compressions & Check Pulse</h2>
-
-        <div class="content">
-
-      <div class="pulse-check">
-
-
-      Does the patient have a pulse?<br/>
-      <button onClick={this.handlePulseClickYes}>Yes</button>
-      <button onClick={this.handlePulseClickNo}>No</button>
-      </div><br/>
+          <div class="content">
+            <div class="pulse-check">
+              Does the patient have a pulse?<br/>
+              <button onClick={this.handlePulseClickYes}>Yes</button>
+              <button onClick={this.handlePulseClickNo}>No</button>
+            </div>
+          <br/>
 
       <div class="rhythm-check" style={{ display: this.state.showRhythmSelector ? "block" : "none" }}>
         <form onSubmit={this.handleSubmit}>
@@ -194,32 +183,26 @@ class RhythmCheckForm extends Component {
       </div>
 
         <br/><br/>
-      <div style={{ display: this.state.showShockAlertNo ? "block" : "none" }}>
-      Rhythm Not Shockable. Continue Compressions.
-      </div>
+        <div style={{ display: this.state.showShockAlertNo ? "block" : "none" }}>
+          Rhythm Not Shockable. Continue Compressions.
+        </div>
 
-      <div style={{ display: this.state.showShockAlertYes ? "block" : "none" }}>
-      Rhythm Shockable.<br/>
-    <button onClick={this.openCodeShockForm}>Record Shock</button>
+        <div style={{ display: this.state.showShockAlertYes ? "block" : "none" }}>
+          Rhythm Shockable.<br/>
+        <button onClick={this.openCodeShockForm}>Record Shock</button>
+        </div>
       </div>
-    </div>
-
       <div class="actions">
-
-
         <button class="toggle-button" onClick={this.handleSubmit}>
         Submit
         </button>
-
         <button class="toggle-button" onClick={this.onClose}>
           Close
         </button>
-
-    </div>
+      </div>
     </center>
   </div>,
 document.body
-
     )
   }
 }

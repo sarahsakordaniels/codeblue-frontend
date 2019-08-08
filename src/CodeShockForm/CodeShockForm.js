@@ -1,7 +1,5 @@
 import React, {Component} from "react"
 import Swal from 'sweetalert2'
-// import withReactContent from 'sweetalert2-react-content'
-// import "./CodeShockForm.css"
 
 const today = new Date()
 const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
@@ -35,10 +33,7 @@ class CodeShockForm extends Component {
       shockEnergy:''
     })
     this.onClose()
-    // this.props.showShockRecorded()
   }
-
-
 
   render = () => {
     if (!this.props.showCodeShockForm) {
@@ -89,9 +84,8 @@ class CodeShockForm extends Component {
 
 
     return(
-<div>
-</div>
-
+        <div>
+        </div>
     )
   }
 }

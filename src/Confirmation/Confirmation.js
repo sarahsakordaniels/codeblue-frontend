@@ -61,36 +61,36 @@ class Confirmation extends Component {
         <center>
         <h2>Confirm Data</h2>
 
-        <div class="content">
-          <center>
-        <u><b>Patient</b></u>
-        <br/>
-        {patientName} <br />
-        <u><b>Medications</b></u>
-        <br/>
-        {medList}
-        <u><b>Shocks</b></u>
-        <br/>
-        {shockList}
-        <u><b>Rhythms</b></u>
-        <br/>
-        {rhythmList}
-        </center>
-        </div>
+          <div class="content">
+            <center>
+            <u><b>Patient</b></u>
+            <br/>
+            {patientName} <br />
+            <u><b>Medications</b></u>
+            <br/>
+            {medList}
+            <u><b>Shocks</b></u>
+            <br/>
+            {shockList}
+            <u><b>Rhythms</b></u>
+            <br/>
+            {rhythmList}
+            </center>
+          </div>
 
-        <div class="actions">
-        <button class="toggle-button" onClick={this.handleSubmit}>
-        Submit
-        </button>
+          <div class="actions">
+            <button class="toggle-button" onClick={this.handleSubmit}>
+            Submit
+            </button>
 
-        <button class="toggle-button" onClick={this.onClose}>
-          Close
-        </button>
+            <button class="toggle-button" onClick={this.onClose}>
+              Close
+            </button>
 
-    </div>
-    </center>
-  </div>,
-document.body
+          </div>
+      </center>
+    </div>,
+    document.body
 
     )
   }

@@ -41,21 +41,21 @@ getCodes = () =>{
 }
 
   addShock = (shockTime, shockEnergy, code_id) => {
-  const {shocks} = this.state
-  const newShock = {shockTime, shockEnergy, code_id: this.state.maxId}
-  const shockList = [...shocks, newShock]
-  this.setState({
-    shocks: shockList
-  })
-  const body = {time:shockTime, energy:shockEnergy, code_id:this.state.maxId}
-  fetch('http://localhost:3000/shocks', {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body)
+    const {shocks} = this.state
+    const newShock = {shockTime, shockEnergy, code_id: this.state.maxId}
+    const shockList = [...shocks, newShock]
+    this.setState({
+      shocks: shockList
     })
-    .catch(error => (console.error(error.message)))
+    const body = {time:shockTime, energy:shockEnergy, code_id:this.state.maxId}
+    fetch('http://localhost:3000/shocks', {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body)
+      })
+      .catch(error => (console.error(error.message)))
 }
 
   addMed = (drug, dose, time, code_id) => {
@@ -82,15 +82,15 @@ getCodes = () =>{
     this.setState({
       codes: codeList
     })
-  const body = {begin_time:beginTime, patient_id:patient_id}
-  fetch('http://localhost:3000/codes', {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body)
-    })
-    .catch(error => (console.error(error.message)))
+    const body = {begin_time:beginTime, patient_id:patient_id}
+    fetch('http://localhost:3000/codes', {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body)
+      })
+      .catch(error => (console.error(error.message)))
   }
 
   addRhythm = (pulse, rhythm, time, code_id) => {
@@ -112,10 +112,7 @@ getCodes = () =>{
   }
 
   render = () => {
-
-
     return(
-
       <div>
          <Timer
            getCodes={this.getCodes} findMaxId={this.findMaxId}

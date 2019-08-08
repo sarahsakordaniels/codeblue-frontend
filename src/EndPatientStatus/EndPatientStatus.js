@@ -30,12 +30,9 @@ class EndPatientStatus extends Component {
       showRoscTime: false,
       showTimeOfDeath: false
     })
-    // this.props.addCode(this.state.beginTime, this.state.endTime, this.state.patientStatus, this.state.patient_id)
-    //make an edit to patch with status and end time
+
     this.props.showConfirmation()
     this.props.findMaxId()
-    // this.props.addEndTime(this.state.endTime)
-    // this.props.addPatientStatus(this.state.patientStatus)
   }
 
   handleChange = (event) =>{

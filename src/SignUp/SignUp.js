@@ -103,7 +103,7 @@ handleSubmit = ()=> {
 
    return (
 
-<div></div>
+     <div></div>
 
 
       )
@@ -111,12 +111,3 @@ handleSubmit = ()=> {
 }
 
 export default SignUp
-
-// <form onSubmit={this.handleSubmit}>
-//   <h2>Sign Up For Account</h2>
-//        Name:<input name="name" value={this.state.name} onChange={this.handleChange}/>
-//        Email:<input name="email" value={this.state.email} onChange={this.handleChange}/>
-//        Password:<input name="password" value={this.state.password} onChange={this.handleChange}/>
-//         <br/>
-//         <button>Sign Up</button>
-//     </form>

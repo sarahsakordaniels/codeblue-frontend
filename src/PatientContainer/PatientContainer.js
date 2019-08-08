@@ -24,7 +24,3 @@ constructor(props){
 
 
 export default PatientContainer
-
-
-// <PatientList patients={this.props.patients} />
-// <AddPatientForm addPatient={this.props.addPatient} patients={this.props.patients} users={this.props.users}/>

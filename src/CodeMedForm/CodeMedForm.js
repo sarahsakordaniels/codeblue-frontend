@@ -77,7 +77,7 @@ class CodeMedForm extends Component {
           showPatientWeight: false,
           showOtherDoseForm: false
         })
-    }
+      }
   }
 
   handleSubmit = (event) => {
@@ -194,8 +194,8 @@ class CodeMedForm extends Component {
             <div class="epinephrine-dose" style={{ display: this.state.showEpiDose ? "block" : "none" }}>
               Dose: <select name="dose" value={this.state.dose} onChange={this.handleDoseChange}>
                       <option value="">Select Epinephrine Dose</option>
-                      <option value="0.5mg">0.5mg</option>
-                      <option value="1mg">1mg</option>
+                      <option value="0.5mg">0.5 mg</option>
+                      <option value="1mg">1 mg</option>
                     </select>
                     <br/><br/>
                     Administration Time: <input name="time" value={time} />
@@ -213,8 +213,8 @@ class CodeMedForm extends Component {
             <div class="amiodarone-dose" style={{ display: this.state.showAmioDose ? "block" : "none" }}>
               Dose: <select name="dose" value={this.state.dose} onChange={this.handleDoseChange}>
                       <option value="">Select Amiodarone Dose</option>
-                      <option value="300mg">First Dose - 300mg Bolus</option>
-                      <option value="150mg">Second Dose - 150mg Bolus</option>
+                      <option value="300mg">First Dose - 300 mg Bolus</option>
+                      <option value="150mg">Second Dose - 150 mg Bolus</option>
                     </select>
                     <br/><br/>
                       Administration Time: <input name="time" value={time} />
@@ -233,10 +233,10 @@ class CodeMedForm extends Component {
             <div class="lidocaine-dose" style={{ display: this.state.showLidoDose ? "block" : "none" }}>
               Dose: <select name="dose" value={this.state.dose} onChange={this.handleLidoDoseChange}>
                       <option value="">Select Lidocaine Dose</option>
-                      <option value="1.0mg/kg">First Dose - 1mg/kg</option>
-                      <option value="1.5mg/kg">First Dose - 1.5mg/kg</option>
+                      <option value="1.0mg/kg">First Dose - 1 mg/kg</option>
+                      <option value="1.5mg/kg">First Dose - 1.5 mg/kg</option>
                       <option value="0.5mg/kg">Second Dose - 0.5 mg/kg</option>
-                      <option value="0.75mg/kg">Second Dose - 0.75mg/kg</option>
+                      <option value="0.75mg/kg">Second Dose - 0.75 mg/kg</option>
                     </select>
                     <br /><br/>
                 <div style={{display: this.state.showPatientWeight ? "block" : "none" }}>Patient Weight (kg):<input type="number" placeholder="Enter in Kilograms" name="weight" onChange={this.setPatientWeight}/>

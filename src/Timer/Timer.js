@@ -34,9 +34,7 @@ class Timer extends Component {
     endTime: '',
     beginTime: time,
     patientId: '',
-    patientStatus: '',
-    // roscTime: ''
-
+    patientStatus: ''
   }
 
    addRoscTime = roscTime => {
@@ -146,11 +144,6 @@ class Timer extends Component {
     }, 10)
     setTimeout(() => this.props.findMaxId(), 5000 );
     setTimeout(() => this.props.getCodes(), 2000 );
-    // setTimeout(() => this.setState({showCodeSwitchAlert: true}), 15000);
-    // setTimeout(() => this.setState({showCodeSwitchAlert: true}), 10000);
-    // setTimeout(() => this.setState({showRhythmCheckForm: true}), 10);
-    // setTimeout(() => this.setState({showCodeShockForm: true}), 10000);
-    // setTimeout(() => this.setState({showCodeMedForm: true}), 5000);
   }
 
   startTimer = () => {
@@ -234,9 +227,8 @@ class Timer extends Component {
           <button  class="butn" onClick={this.resetTimer}>Reset</button>
         )}
        </center>
-    
 
-<div>
+        <div>
           <center>
                 <button class="butn" onClick={this.showCodeShockForm}>Record Shock</button>
                 <button class="butn" onClick={this.showRhythmCheckForm}>Record Rhythm</button>
@@ -245,48 +237,44 @@ class Timer extends Component {
                 <button class="butn" onClick={this.showEndCode}>End Code</button>
 
             </center>
-</div>
-      <Confirmation patientId={this.state.patientId} shocks={this.props.shocks} patients={this.props.patients}
-        rhythms={this.props.rhythms} meds={this.props.meds} codes={this.props.codes}
-        onClose={this.showConfirmation} showConfirmation={this.state.showConfirmation} editCode={this.editCode}/>
+          </div>
 
-      <EndCode maxId={this.props.maxId} beginTime={this.state.beginTime} showEndPatientStatus={this.showEndPatientStatus}
-        stopTimer={this.stopTimer} endTime={this.state.endTime} addEndTime={this.props.addEndTime}
-        onClose={this.showEndCode} showEndCode={this.state.showEndCode}
-        patientId={this.state.patientId} shocks={this.props.shocks} patients={this.props.patients}
+        <Confirmation patientId={this.state.patientId} shocks={this.props.shocks} patients={this.props.patients}
           rhythms={this.props.rhythms} meds={this.props.meds} codes={this.props.codes}
-          showConfirmation={this.state.showConfirmation} onConfirmationClose={this.showConfirmation}/>
+          onClose={this.showConfirmation} showConfirmation={this.state.showConfirmation} editCode={this.editCode}/>
 
-      <EndPatientStatus maxId={this.props.maxId} findMaxId={this.props.findMaxId} showConfirmation={this.showConfirmation}
-        patients={this.props.patients}  addCode={this.props.addCode} beginTime={this.state.beginTime}
-        addEndTime={this.props.addEndTime} addPatientStatus={this.props.addPatientStatus}
-        addTimeOfDeath={this.props.addTimeOfDeath} addRoscTime={this.addRoscTime} onClose={this.showEndPatientStatus}
-        showEndPatientStatus={this.state.showEndPatientStatus} setPatientStatus={this.setPatientStatus}/>
+        <EndCode maxId={this.props.maxId} beginTime={this.state.beginTime} showEndPatientStatus={this.showEndPatientStatus}
+          stopTimer={this.stopTimer} endTime={this.state.endTime} addEndTime={this.props.addEndTime}
+          onClose={this.showEndCode} showEndCode={this.state.showEndCode}
+          patientId={this.state.patientId} shocks={this.props.shocks} patients={this.props.patients}
+            rhythms={this.props.rhythms} meds={this.props.meds} codes={this.props.codes}
+            showConfirmation={this.state.showConfirmation} onConfirmationClose={this.showConfirmation}/>
 
-      <CodeSwitchAlert onClose={this.showCodeSwitchAlert} showCodeSwitchAlert={this.state.showCodeSwitchAlert} />
+        <EndPatientStatus maxId={this.props.maxId} findMaxId={this.props.findMaxId} showConfirmation={this.showConfirmation}
+          patients={this.props.patients}  addCode={this.props.addCode} beginTime={this.state.beginTime}
+          addEndTime={this.props.addEndTime} addPatientStatus={this.props.addPatientStatus}
+          addTimeOfDeath={this.props.addTimeOfDeath} addRoscTime={this.addRoscTime} onClose={this.showEndPatientStatus}
+          showEndPatientStatus={this.state.showEndPatientStatus} setPatientStatus={this.setPatientStatus}/>
 
-      <RhythmCheckForm findMaxId={this.props.findMaxId} stopTimer={this.stopTimer} showRoscAlert={this.showRoscAlert}
-        addRhythm={this.props.addRhythm} toggleRhythmCheckForm={this.toggleRhythmCheckForm} onClose={this.showRhythmCheckForm}
-        showRhythmCheckForm={this.state.showRhythmCheckForm} showCodeShockForm={this.showCodeShockForm}/>
+        <CodeSwitchAlert onClose={this.showCodeSwitchAlert} showCodeSwitchAlert={this.state.showCodeSwitchAlert} />
 
-      <CodeShockForm  onClose={this.showCodeShockForm} showCodeShockForm={this.state.showCodeShockForm}
-        showShockRecorded = {this.showShockRecorded} addShock={this.props.addShock} />
+        <RhythmCheckForm findMaxId={this.props.findMaxId} stopTimer={this.stopTimer} showRoscAlert={this.showRoscAlert}
+          addRhythm={this.props.addRhythm} toggleRhythmCheckForm={this.toggleRhythmCheckForm} onClose={this.showRhythmCheckForm}
+          showRhythmCheckForm={this.state.showRhythmCheckForm} showCodeShockForm={this.showCodeShockForm}/>
 
-      <CodeMedForm  onClose={this.showCodeMedForm} showCodeMedForm={this.state.showCodeMedForm}
-        addMed={this.props.addMed} />
+        <CodeShockForm  onClose={this.showCodeShockForm} showCodeShockForm={this.state.showCodeShockForm}
+          showShockRecorded = {this.showShockRecorded} addShock={this.props.addShock} />
 
-      <ShockRecorded onClose={this.showShockRecorded} showShockRecorded={this.state.showShockRecorded}/>
+        <CodeMedForm  onClose={this.showCodeMedForm} showCodeMedForm={this.state.showCodeMedForm}
+          addMed={this.props.addMed} />
 
-      <RoscAlert addRoscTime={this.addRoscTime} setPatientStatus={this.setPatientStatus}
-        onClose={this.showRoscAlert} addRhythm={this.props.addRhythm} showRoscAlert={this.state.showRoscAlert}/>
+        <ShockRecorded onClose={this.showShockRecorded} showShockRecorded={this.state.showShockRecorded}/>
 
-      {this.state.showMetronome ? <Metronome/> : null}
+        <RoscAlert addRoscTime={this.addRoscTime} setPatientStatus={this.setPatientStatus}
+          onClose={this.showRoscAlert} addRhythm={this.props.addRhythm} showRoscAlert={this.state.showRoscAlert}/>
 
-      </div>
-
-
-
-
+        {this.state.showMetronome ? <Metronome/> : null}
+    </div>
     )
   }
 }
