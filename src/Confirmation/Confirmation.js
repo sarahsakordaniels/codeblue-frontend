@@ -63,18 +63,10 @@ class Confirmation extends Component {
 
           <div class="content">
             <center>
-            <u><b>Patient</b></u>
-            <br/>
-            {patientName} <br />
-            <u><b>Medications</b></u>
-            <br/>
-            {medList}
-            <u><b>Shocks</b></u>
-            <br/>
-            {shockList}
-            <u><b>Rhythms</b></u>
-            <br/>
-            {rhythmList}
+              <u><h3>Patient</h3></u>{patientName}<br/>
+              <u><h3>Medications</h3></u>{medList}<br/>
+              <u><h3>Shocks</h3></u>{shockList}<br/>
+              <u><h3>Rhythms</h3></u>{rhythmList}<br/>
             </center>
           </div>
 

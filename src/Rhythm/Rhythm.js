@@ -6,9 +6,10 @@ const Rhythm = (props) => {
 
   return(
       <div>
-        <p>Pulse Present: {props.pulse.toString()}</p>
-        <p>Heart Rhythm: {props.rhythm}</p>
-        <p>Time Recorded: {props.time}</p>
+        <b>Pulse Present:</b> {props.pulse.toString()}<br/>
+        <b>Heart Rhythm:</b> {props.rhythm}<br/>
+        <b>Time Recorded:</b> {props.time}<br/>
+        _____
       </div>
     )
 }

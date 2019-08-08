@@ -5,8 +5,9 @@ const Shock = (props) => {
 
   return(
       <div>
-        <p>Energy: {props.shockEnergy} joules</p>
-        <p>Time of Shock: {props.shockTime}</p>
+        <b>Energy:</b> {props.shockEnergy} joules <br/>
+        <b>Time of Shock:</b> {props.shockTime} <br/>
+        _____
       </div>
     )
 }
