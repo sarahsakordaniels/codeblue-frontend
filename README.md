@@ -2,7 +2,11 @@
 
 # What Is CodeCourse?
 
-CodeCourse is an interactive code blue manager for guiding healthcare providers through the Advanced Cardiac Life Support algorithm. 
+CodeCourse is an interactive code blue manager for guiding healthcare providers through the Advanced Cardiac Life Support (ACLS) algorithm when a patient goes into cardiac arrest.
+
+ACLS is like CPR, but with higher level interventions such as IV medications, defibrillation (shocks to the heart), and intubation (a tube inserted into the airway to facilitate artificial breathing support). 
+
+The following is the algorithm that is to be followed during a code blue event:
 
 <img src="https://lh3.googleusercontent.com/uScadhwEsryYgU2dtz7uSiwVnFTjomJEZwYl2exsFnoJ8BcH5QrTG5I-v3QyOSAv-b8P2qDd0PEQ-_fcWDcMKNSn-Gprlj5miZ5fA13iTpurntIIi-45N9DH19WCYfrV131ru__AGOzHgbNfUCE6u-Tyxq9U2t9U0mkaXI24wpNNRjPH2C5sG9moIYGfU13s7hZg9r1Hv-juf-tj61X8LYnPzxhH4CheSj-loCHJrOtesvrF9ctuX-_IdCGaolPAo_cU3758bbuKWGrpAsD75MGdC8H_kSDP18KYqmcGqDyO2sp_KDWbAhVkwHidMmT0tcHXE4mkhetCCAdxj-ubGSZHxAiVCBOqowtYQB6qcqyS7318abPW6omvp2ktyzMu4IkOAp01Glq8SUcrD3ozg-ZM2WmfCCVuLtvO8l7207eTjYtlipAoXFHo5kvtnFvfNF4yYc69RzU6xpkeVxHmIninXKi7INwsI5CU-P4YJTdi5EL731YmrhdTH2iFJaSBNf8I7pv6BTbryq5SMJJhttmN3MdZfP-btEWlMq25yUFwXolgfm3HQAQhlEret-sibycDPYHz77Z8nwteCxGfsvdhPZwDqlk9O_i5_doKSviG6_im1oKVkYiLPvfma1QTx-uPrEs-QPhv7BAmUcQ0105SxLUz5qg=w1180-h1554-no">
 
