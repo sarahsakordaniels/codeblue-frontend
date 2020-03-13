@@ -57,6 +57,6 @@ sarahsakordaniels@gmail.com
 
 [LinkedIn](https://www.linkedin.com/in/sarahsakordaniels/)
 
-[Medium](www.medium.com/@sarahsakordaniels)
+[Medium](https://www.medium.com/@sarahsakordaniels)
 
 
